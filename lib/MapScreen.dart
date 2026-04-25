@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapPage extends StatefulWidget{
-  const MapPage({super.key});
+class MapScreen extends StatefulWidget{
+  const MapScreen({super.key});
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<MapScreen> createState() => _MapScreenState();
 }
 
-class _MapPageState extends State<MapPage>{
+class _MapScreenState extends State<MapScreen>{
   Set<Marker> _markers = {};
 
   void _onMapCreated(GoogleMapController controller){

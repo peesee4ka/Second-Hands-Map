@@ -2,15 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proj_13_04_2026_1/homeScreen.dart';
 
-class LoginScreen extends StatefulWidget{
-  const LoginScreen({super.key});
+class RegistrationScreen extends StatefulWidget{
+  const RegistrationScreen({super.key});
 
   @override
   State<StatefulWidget> createState() => _LoginScreenState();
 
 }
-class _LoginScreenState extends State<LoginScreen>{
+class _LoginScreenState extends State<RegistrationScreen>{
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -18,10 +19,10 @@ class _LoginScreenState extends State<LoginScreen>{
 
   Future<void> login() async{
     try{
-      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+      UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
           email: _emailController.text,
           password: _passwordController.text);
-          Navigator.pop(context);
+      Navigator.pop(context);
     }
     on FirebaseAuthException catch(e){
       ScaffoldMessenger.of(context).showSnackBar(
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen>{
               decoration: InputDecoration(labelText: "Password", border: OutlineInputBorder()),
             ),
             ElevatedButton(onPressed: (){login();},
-              child: Text("Login"),
+              child: Text("Create account"),
             )
           ],
         ),

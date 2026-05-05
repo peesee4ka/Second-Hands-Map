@@ -4,7 +4,6 @@ import 'package:proj_13_04_2026_1/ProfileScreen.dart';
 import 'package:proj_13_04_2026_1/MapScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
